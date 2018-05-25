@@ -1,0 +1,30 @@
+{
+  "name": "simple-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "dev": "npm-run-all --parallel start playground",
+    "playground": "graphql playground"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuzhuzhu/prisma-react-fullstack-tutorial.git"
+  },
+  "keywords": [
+    "graphql",
+    "prisma",
+    "boilerplate"
+  ],
+  "author": "walterr@live.cn",
+  "dependencies": {
+    "graphql-yoga": "^1.14.4"
+  },
+  "devDependencies": {
+    "graphql-cli": "2.16.0",
+    "nodemon": "^1.17.5",
+
+    "npm-run-all": "^4.1.3"
+  }
+}
