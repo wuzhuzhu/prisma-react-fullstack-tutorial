@@ -99,6 +99,10 @@
   version "10.1.2"
   resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-10.1.2.tgz#1b928a0baa408fc8ae3ac012cc81375addc147c6"
 
+"@types/node@^9.4.6":
+  version "9.6.18"
+  resolved "http://registry.npm.taobao.org/@types/node/download/@types/node-9.6.18.tgz#092e13ef64c47e986802c9c45a61c1454813b31d"
+
 "@types/serve-static@*":
   version "1.13.2"
   resolved "http://registry.npm.taobao.org/@types/serve-static/download/@types/serve-static-1.13.2.tgz#f5ac4d7a6420a99a6a45af4719f4dcd8cd907a48"
@@ -199,7 +203,27 @@ apollo-codegen@^0.19.1:
     source-map-support "^0.5.0"
     yargs "^10.0.3"
 
-apollo-link@^1.2.1:
+apollo-link-error@1.0.9:
+  version "1.0.9"
+  resolved "http://registry.npm.taobao.org/apollo-link-error/download/apollo-link-error-1.0.9.tgz#83bbe019a3bca7c602c399889b313a7e5e22713f"
+  dependencies:
+    apollo-link "^1.2.2"
+
+apollo-link-ws@1.0.8:
+  version "1.0.8"
+  resolved "http://registry.npm.taobao.org/apollo-link-ws/download/apollo-link-ws-1.0.8.tgz#ac1de8f29e92418728479a9a523af9f75b9ccc8b"
+  dependencies:
+    apollo-link "^1.2.2"
+
+apollo-link@1.2.1:
+  version "1.2.1"
+  resolved "http://registry.npm.taobao.org/apollo-link/download/apollo-link-1.2.1.tgz#c120b16059f9bd93401b9f72b94d2f80f3f305d2"
+  dependencies:
+    "@types/node" "^9.4.6"
+    apollo-utilities "^1.0.0"
+    zen-observable-ts "^0.8.6"
+
+apollo-link@1.2.2, apollo-link@^1.2.1, apollo-link@^1.2.2:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/apollo-link/download/apollo-link-1.2.2.tgz#54c84199b18ac1af8d63553a68ca389c05217a03"
   dependencies:
@@ -811,6 +835,13 @@ cross-fetch@2.0.0:
     node-fetch "2.0.0"
     whatwg-fetch "2.0.3"
 
+cross-fetch@2.1.1:
+  version "2.1.1"
+  resolved "http://registry.npm.taobao.org/cross-fetch/download/cross-fetch-2.1.1.tgz#c41b37af8e62ca1c6ad0bd519dcd0a16c75b6f1f"
+  dependencies:
+    node-fetch "2.1.2"
+    whatwg-fetch "2.0.4"
+
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "http://registry.npm.taobao.org/cross-spawn/download/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -849,6 +880,10 @@ dashdash@^1.12.0:
   resolved "http://registry.npm.taobao.org/dashdash/download/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
   dependencies:
     assert-plus "^1.0.0"
+
+dataloader@^1.4.0:
+  version "1.4.0"
+  resolved "http://registry.npm.taobao.org/dataloader/download/dataloader-1.4.0.tgz#bca11d867f5d3f1b9ed9f737bd15970c65dff5c8"
 
 debug@2.6.9, debug@^2.1.1, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
@@ -1472,6 +1507,18 @@ graphcool-yml@0.4.15:
     scuid "^1.0.2"
     yaml-ast-parser "^0.0.40"
 
+graphql-binding@2:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/graphql-binding/download/graphql-binding-2.0.0.tgz#6dce5842fef724327a2c469c5366cdf6ba903f30"
+  dependencies:
+    graphql-import "^0.5.2"
+    graphql-tools "3.0.1"
+    iterall "1.2.2"
+    object-path-immutable "^1.0.1"
+    resolve-cwd "^2.0.0"
+    ts-node "^6.0.2"
+    yargs "^11.0.0"
+
 graphql-cli-prepare@1.4.19:
   version "1.4.19"
   resolved "http://registry.npm.taobao.org/graphql-cli-prepare/download/graphql-cli-prepare-1.4.19.tgz#9df5d608ba42c4947d7ef24f9fc39e3df0c89301"
@@ -1588,6 +1635,18 @@ graphql-import@0.4.5, graphql-import@^0.4.0, graphql-import@^0.4.4:
   dependencies:
     lodash "^4.17.4"
 
+graphql-import@0.5.2:
+  version "0.5.2"
+  resolved "http://registry.npm.taobao.org/graphql-import/download/graphql-import-0.5.2.tgz#d7e05dc07d2d66e8d8c4bd408650f9fdaeddb8f8"
+  dependencies:
+    lodash "^4.17.4"
+
+graphql-import@^0.5.2:
+  version "0.5.3"
+  resolved "http://registry.npm.taobao.org/graphql-import/download/graphql-import-0.5.3.tgz#c0487f7de16766e7e2174a85f61900de59a59227"
+  dependencies:
+    lodash "^4.17.4"
+
 graphql-import@^0.6.0:
   version "0.6.0"
   resolved "http://registry.npm.taobao.org/graphql-import/download/graphql-import-0.6.0.tgz#c00cb8a269ceea263e062922c8c81a2272d1ffcb"
@@ -1654,6 +1713,16 @@ graphql-subscriptions@^0.5.8:
   resolved "http://registry.npm.taobao.org/graphql-subscriptions/download/graphql-subscriptions-0.5.8.tgz#13a6143c546bce390404657dc73ca501def30aa7"
   dependencies:
     iterall "^1.2.1"
+
+graphql-tools@3.0.1:
+  version "3.0.1"
+  resolved "http://registry.npm.taobao.org/graphql-tools/download/graphql-tools-3.0.1.tgz#456c27061fb2f1040f6bb7bf8a68459651090462"
+  dependencies:
+    apollo-link "1.2.1"
+    apollo-utilities "^1.0.1"
+    deprecated-decorator "^0.1.6"
+    iterall "^1.1.3"
+    uuid "^3.1.0"
 
 graphql-tools@^2.23.1:
   version "2.24.0"
@@ -1783,6 +1852,14 @@ http-errors@1.6.3, http-errors@~1.6.2, http-errors@~1.6.3:
     inherits "2.0.3"
     setprototypeof "1.1.0"
     statuses ">= 1.4.0 < 2"
+
+http-link-dataloader@^0.1.2:
+  version "0.1.3"
+  resolved "http://registry.npm.taobao.org/http-link-dataloader/download/http-link-dataloader-0.1.3.tgz#23705749f141fce5f0720e7060e957482f91ad10"
+  dependencies:
+    apollo-link "^1.2.1"
+    cross-fetch "2.0.0"
+    dataloader "^1.4.0"
 
 http-proxy-agent@^2.1.0:
   version "2.1.0"
@@ -2137,7 +2214,7 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "http://registry.npm.taobao.org/isstream/download/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-iterall@^1.1.3, iterall@^1.2.1:
+iterall@1.2.2, iterall@^1.1.3, iterall@^1.2.1:
   version "1.2.2"
   resolved "http://registry.npm.taobao.org/iterall/download/iterall-1.2.2.tgz#92d70deb8028e0c39ff3164fdbf4d8b088130cd7"
 
@@ -2213,7 +2290,7 @@ jsonify@~0.0.0:
   version "0.0.0"
   resolved "http://registry.npm.taobao.org/jsonify/download/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
 
-jsonwebtoken@^8.1.0:
+jsonwebtoken@^8.1.0, jsonwebtoken@^8.2.1:
   version "8.2.1"
   resolved "http://registry.npm.taobao.org/jsonwebtoken/download/jsonwebtoken-8.2.1.tgz#333ee39aa8f238f32fa41693e7a2fb7e42f82b31"
   dependencies:
@@ -2569,16 +2646,16 @@ node-fetch@2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-2.0.0.tgz#982bba43ecd4f2922a29cc186a6bbb0bb73fcba6"
 
+node-fetch@2.1.2, node-fetch@^2.0.0:
+  version "2.1.2"
+  resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
+
 node-fetch@^1.0.1, node-fetch@^1.7.3:
   version "1.7.3"
   resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-1.7.3.tgz#980f6f72d85211a5347c6b2bc18c5b84c3eb47ef"
   dependencies:
     encoding "^0.1.11"
     is-stream "^1.0.1"
-
-node-fetch@^2.0.0:
-  version "2.1.2"
-  resolved "http://registry.npm.taobao.org/node-fetch/download/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
 
 node-pre-gyp@^0.10.0:
   version "0.10.0"
@@ -2735,6 +2812,10 @@ object-copy@^0.1.0:
 object-keys@^1.0.8:
   version "1.0.11"
   resolved "http://registry.npm.taobao.org/object-keys/download/object-keys-1.0.11.tgz#c54601778ad560f1142ce0e01bcca8b56d13426d"
+
+object-path-immutable@^1.0.1:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/object-path-immutable/download/object-path-immutable-1.0.2.tgz#e1e37ebca42b48b429cdc30b25c7a8fb658b0067"
 
 object-path@^0.11.4:
   version "0.11.4"
@@ -2968,6 +3049,21 @@ posix-character-classes@^0.1.0:
 prepend-http@^1.0.1:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/prepend-http/download/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
+
+prisma-binding@^2.0.2:
+  version "2.0.2"
+  resolved "http://registry.npm.taobao.org/prisma-binding/download/prisma-binding-2.0.2.tgz#b938e21b554349524d6e43b93a4ae6e67905d8d3"
+  dependencies:
+    apollo-link "1.2.2"
+    apollo-link-error "1.0.9"
+    apollo-link-ws "1.0.8"
+    cross-fetch "2.1.1"
+    graphql-binding "2"
+    graphql-import "0.5.2"
+    graphql-tools "3.0.1"
+    http-link-dataloader "^0.1.2"
+    jsonwebtoken "^8.2.1"
+    subscriptions-transport-ws "0.9.8"
 
 prisma-json-schema@0.0.4:
   version "0.0.4"
@@ -3227,12 +3323,22 @@ require-main-filename@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/require-main-filename/download/require-main-filename-1.0.1.tgz#97f717b69d48784f5f526a6c5aa8ffdda055a4d1"
 
+resolve-cwd@^2.0.0:
+  version "2.0.0"
+  resolved "http://registry.npm.taobao.org/resolve-cwd/download/resolve-cwd-2.0.0.tgz#00a9f7387556e27038eae232caa372a6a59b665a"
+  dependencies:
+    resolve-from "^3.0.0"
+
 resolve-dir@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/resolve-dir/download/resolve-dir-1.0.1.tgz#79a40644c362be82f26effe739c9bb5382046f43"
   dependencies:
     expand-tilde "^2.0.0"
     global-modules "^1.0.0"
+
+resolve-from@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/resolve-from/download/resolve-from-3.0.0.tgz#b22c7af7d9d6881bc8b6e653335eebcb0a188748"
 
 resolve-url@^0.2.1:
   version "0.2.1"
@@ -3616,6 +3722,19 @@ strip-json-comments@~2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/strip-json-comments/download/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
 
+subscriptions-transport-ws@0.9.8:
+  version "0.9.8"
+  resolved "http://registry.npm.taobao.org/subscriptions-transport-ws/download/subscriptions-transport-ws-0.9.8.tgz#3a26ab96e06f78cf4ace8d083f6227fa55970947"
+  dependencies:
+    backo2 "^1.0.2"
+    eventemitter3 "^2.0.3"
+    iterall "^1.2.1"
+    lodash.assign "^4.2.0"
+    lodash.isobject "^3.0.2"
+    lodash.isstring "^4.0.1"
+    symbol-observable "^1.0.4"
+    ws "^3.0.0"
+
 subscriptions-transport-ws@^0.9.8:
   version "0.9.9"
   resolved "http://registry.npm.taobao.org/subscriptions-transport-ws/download/subscriptions-transport-ws-0.9.9.tgz#8a0bdc4c31df2e90e92901047fd8961deb138acc"
@@ -3742,7 +3861,20 @@ trim-right@^1.0.1:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/trim-right/download/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
 
-ts-node@^6.0.5:
+ts-node@^5.0.1:
+  version "5.0.1"
+  resolved "http://registry.npm.taobao.org/ts-node/download/ts-node-5.0.1.tgz#78e5d1cb3f704de1b641e43b76be2d4094f06f81"
+  dependencies:
+    arrify "^1.0.0"
+    chalk "^2.3.0"
+    diff "^3.1.0"
+    make-error "^1.1.1"
+    minimist "^1.2.0"
+    mkdirp "^0.5.1"
+    source-map-support "^0.5.3"
+    yn "^2.0.0"
+
+ts-node@^6.0.2:
   version "6.0.5"
   resolved "http://registry.npm.taobao.org/ts-node/download/ts-node-6.0.5.tgz#977c1c931da7a2b09ae2930101f0104a5c2271e9"
   dependencies:
@@ -3931,7 +4063,7 @@ whatwg-fetch@2.0.3:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
-whatwg-fetch@>=0.10.0:
+whatwg-fetch@2.0.4, whatwg-fetch@>=0.10.0:
   version "2.0.4"
   resolved "http://registry.npm.taobao.org/whatwg-fetch/download/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
 
@@ -4039,7 +4171,7 @@ yargs-parser@^9.0.2:
   dependencies:
     camelcase "^4.1.0"
 
-yargs@11.0.0:
+yargs@11.0.0, yargs@^11.0.0:
   version "11.0.0"
   resolved "http://registry.npm.taobao.org/yargs/download/yargs-11.0.0.tgz#c052931006c5eee74610e5fc0354bedfd08a201b"
   dependencies:
@@ -4105,7 +4237,7 @@ z-schema@^3.18.2:
   optionalDependencies:
     commander "^2.7.1"
 
-zen-observable-ts@^0.8.9:
+zen-observable-ts@^0.8.6, zen-observable-ts@^0.8.9:
   version "0.8.9"
   resolved "http://registry.npm.taobao.org/zen-observable-ts/download/zen-observable-ts-0.8.9.tgz#d3c97af08c0afdca37ebcadf7cc3ee96bda9bab1"
   dependencies:

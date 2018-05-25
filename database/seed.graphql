@@ -1,0 +1,24 @@
+mutation {
+  createUser(
+    data: {
+      name: "章鱼日报"
+      posts: {
+        create: [
+          {
+            title: "天生就是草稿"
+            content: "草稿也是有骨气的，你说对吗？"
+            likes: 0
+          },
+          {
+            title: "天生就是文章"
+            content: "天生我材必有用，燕雀安知鸿鹄之志哉？"
+            likes: 901
+            isPublished: true
+          }
+        ]
+      }
+    }
+  ) {
+    id
+  }
+}

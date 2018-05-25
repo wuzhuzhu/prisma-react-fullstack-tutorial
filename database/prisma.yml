@@ -1,4 +1,8 @@
-endpoint: http://localhost:4466/default/default
+endpoint: http://localhost:4466/blog/dev
+
+# seed your service with initial data based on seed.graphql
+seed:
+  import: seed.graphql
 
 datamodel:
 - datamodel/enums.graphql
@@ -11,3 +15,6 @@ hooks:
     - echo "Deployment finished"
     - graphql get-schema --project database
     - graphql prepare
+
+# to disable authentication: 直接去掉secret
+secret: mysecret123
