@@ -1,0 +1,16 @@
+type User {
+  id: ID! @unique
+  name: String!
+  posts: [Post!]! @relation(name: "UserPosts", onDelete: CASCADE)
+}
+
+type Post {
+  id: ID! @unique
+  user: User! @relation(name: "UserPosts", onDelete: SET_NULL)
+  title: String
+  content: String!
+  isPublished: Boolean! @default(value: "false")
+  likes: Int! @default(value: 0)
+  createdAt: DateTime!
+  updatedAt: DateTime!
+}
