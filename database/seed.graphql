@@ -13,7 +13,7 @@ mutation {
             title: "天生就是文章"
             content: "天生我材必有用，燕雀安知鸿鹄之志哉？"
             likes: 901
-            isPublished: true
+            published: true
           }
         ]
       }
