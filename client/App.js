@@ -1,18 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Root } from "native-base";
+import RootRoute from './src'
 
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Root>
+        <RootRoute />
+      </Root>
     );
   }
 }
 
+/*
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -21,3 +22,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+*/
