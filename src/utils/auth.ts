@@ -3,7 +3,7 @@
 export function getUser(ctx) {
   return ctx.db.query.user({
     where: {
-      name: '章鱼日报'
+      name: "章鱼日报"
     }
   }, `{
       id

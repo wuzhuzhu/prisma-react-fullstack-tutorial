@@ -1,42 +1,43 @@
 import { Context } from './interfaces'
 import { getUser } from './utils/auth'
 
-
-let idCount = 0
-const posts = []
-
 const resolvers = {
   Query: {
-    description: () => `This is the API for a simple blogging application`,
-    posts: () => posts,
-    post: (parent, args) => posts.find(post => post.id === args.id),
+    posts(parent, args, ctx, info) {
+      return ctx.db.query.posts({ }, info)
+    },
+    post(parent, args, ctx, info) {
+      return ctx.db.query.post({ where: { id: args.id } }, info)
+    },
   },
   Mutation: {
-    createDraft: (parent, args) => {
-      const post = {
-        id: `post_${idCount++}`,
-        title: args.title,
-        content: args.content,
-        likes: args.likes || 0,
-        published: false,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      }
-      posts.push(post)
-      return post
+    async createDraft(parent, { title, content, likes }, ctx, info) {
+      const { id: userId } = await getUser(ctx)
+      return ctx.db.mutation.createPost(
+        {
+          data: {
+            title,
+            content,
+            likes,
+            user: {
+              connect: { id: userId }
+            }
+          },
+        },
+        info,
+      )
     },
-    deletePost: (parent, args) => {
-      const postIndex = posts.findIndex(post => post.id === args.id)
-      if (postIndex > -1) {
-        const deleted = posts.splice(postIndex, 1)
-        return deleted[0]
-      }
-      return null
+    deletePost(parent, { id }, ctx, info) {
+      return ctx.db.mutation.deletePost({ where: { id } }, info)
     },
-    publish: (parent, args) => {
-      const postIndex = posts.findIndex(post => post.id === args.id)
-      posts[postIndex].published = true
-      return posts[postIndex]
+    publish(parent, { id }, ctx, info) {
+      return ctx.db.mutation.updatePost(
+        {
+          where: { id },
+          data: { published: true },
+        },
+        info,
+      )
     },
   },
 }

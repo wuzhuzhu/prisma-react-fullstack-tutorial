@@ -7,7 +7,7 @@ type Query {
 }
 
 type Mutation {
-  createDraft(title: String!, content: String): Post
+  createDraft(title: String!, content: String!, likes: Int): Post
   deletePost(id: ID!): Post
   publish(id: ID!): Post
 }
