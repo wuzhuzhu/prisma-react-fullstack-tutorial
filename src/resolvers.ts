@@ -3,6 +3,9 @@ import { getUser } from './utils/auth'
 
 const resolvers = {
   Query: {
+    description() {
+      return '我的金闪闪Graphql Server已就绪！'
+    },
     posts(parent, args, ctx, info) {
       return ctx.db.query.posts({ }, info)
     },

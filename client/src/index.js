@@ -7,6 +7,24 @@ import {
   Title,
   Text
 } from 'native-base'
+import gql from 'graphql-tag'
+import { Query } from 'react-apollo'
+import { isEmpty, map } from 'lodash'
+
+const POST_QUERY = gql`
+  query PostQuery {
+    posts {
+      id
+      title
+      content
+      published
+      user {
+        id
+        name
+      }
+    }
+  }
+`
 
 function App() {
   return <Container>
@@ -18,16 +36,18 @@ function App() {
       <Right></Right>
     </Header>
     <Content padder>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
-      <Text>每一个帖子的内容</Text>
+      <Query query={POST_QUERY}>
+        {({ loading, error, data }) => {
+          if (loading) return <Text>Loading...</Text>;
+          if (error) return <Text>Error :(</Text>;
+
+          if (data && !isEmpty(data.posts)) {
+            return map(data.posts, post => <Title key={post.id}>
+                {post.title}
+            </Title>)
+          } else return <Text>还没有帖子哦</Text>
+        }}
+      </Query>
     </Content>
     <Footer>
       <FooterTab>
