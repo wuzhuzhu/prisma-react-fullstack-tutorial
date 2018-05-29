@@ -7,5 +7,6 @@ export function getUser(ctx) {
     }
   }, `{
       id
+      role
     }`)
 }

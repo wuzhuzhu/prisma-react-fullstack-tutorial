@@ -1,4 +1,5 @@
 # import Post from "./generated/prisma.graphql"
+# import ROLE from "./generated/prisma.graphql"
 
 type Query {
   description: String
@@ -10,4 +11,6 @@ type Mutation {
   createDraft(title: String!, content: String!, likes: Int): Post
   deletePost(id: ID!): Post
   publish(id: ID!): Post
+  like(id: ID!, amount: Int): Post
+  setRole(id: ID!, newRole: ROLE): User
 }

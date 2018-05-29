@@ -2,6 +2,7 @@ type User {
   id: ID! @unique
   name: String! @unique
   posts: [Post!]! @relation(name: "UserPosts", onDelete: CASCADE)
+  role: ROLE! @default(value: "USER")
 }
 
 type Post {

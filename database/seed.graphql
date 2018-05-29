@@ -1,7 +1,8 @@
 mutation {
   createUser(
     data: {
-      name: "章鱼日报"
+      name: "章鱼日报",
+      role: ADMIN
       posts: {
         create: [
           {
