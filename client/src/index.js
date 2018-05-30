@@ -13,21 +13,7 @@ import { Query } from 'react-apollo'
 import { isEmpty, map } from 'lodash'
 
 import PostCard from './components/post-card'
-
-const POST_QUERY = gql`
-  query PostQuery {
-    posts {
-      id
-      title
-      content
-      published
-      user {
-        id
-        name
-      }
-    }
-  }
-`
+import { POST_QUERY } from './graphqls'
 
 function App() {
   return <Container>

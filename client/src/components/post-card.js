@@ -6,13 +6,33 @@ import {
   Button,
 } from 'native-base'
 import { get } from 'lodash'
+import { Mutation } from 'react-apollo'
+import gql from 'graphql-tag'
+import { filter } from 'lodash'
+
+import { DELETE_POST, POST_QUERY } from "../graphqls";
 
 const SwipablePostCard = ({ post }) => (
-  <SwipeRow
-    rightOpenValue={-75}
-    right={<Button danger onPress={() => console.log('删除帖子', post.id)}><Text>删除</Text></Button>}
-    body={<PostCard post={post} />}
-  />
+  <Mutation
+    mutation={DELETE_POST}
+    update={(cache, { data: { deletePost } }) => {
+      const { posts } = cache.readQuery({ query: POST_QUERY });
+      cache.writeQuery({
+        query: POST_QUERY,
+        data: { posts: filter(posts, p => p.id !== post.id) }
+      });
+    }}
+  >
+    {(deletePost, { data }) => (
+      <SwipeRow
+        rightOpenValue={-75}
+        right={<Button danger onPress={() => deletePost({
+          variables: { id: post.id }
+        })}><Text>删除</Text></Button>}
+        body={<PostCard post={post} />}
+      />
+    )}
+  </Mutation>
 )
 
 const PostCard =  ({ post }) => <Card>
