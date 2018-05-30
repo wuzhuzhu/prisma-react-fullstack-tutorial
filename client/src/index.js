@@ -4,12 +4,15 @@ import {
   Header, Left, Body, Right,
   Content,
   Footer, FooterTab, Button, Icon,
+  Card, CardItem,
   Title,
   Text
 } from 'native-base'
 import gql from 'graphql-tag'
 import { Query } from 'react-apollo'
 import { isEmpty, map } from 'lodash'
+
+import PostCard from './components/post-card'
 
 const POST_QUERY = gql`
   query PostQuery {
@@ -42,9 +45,7 @@ function App() {
           if (error) return <Text>Error :(</Text>;
 
           if (data && !isEmpty(data.posts)) {
-            return map(data.posts, post => <Title key={post.id}>
-                {post.title}
-            </Title>)
+            return map(data.posts, post => <PostCard key={post.id} post={post} />)
           } else return <Text>还没有帖子哦</Text>
         }}
       </Query>
